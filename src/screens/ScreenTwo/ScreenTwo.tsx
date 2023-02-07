@@ -20,13 +20,9 @@ const ScreenTwo = ({ dataIn, dataOut, dataLoad }: Props) => {
   const renderItem = ({ item, index }: any) => {
     console.log(index);
     return (
-      <View
-        key={index}
-        style={[styles.listContainer, dataIn.listContainerStyle]}
-      >
+      <View style={[styles.listContainer, dataIn.listContainerStyle]}>
         <TouchableOpacity onPress={() => dataOut(item)}>
           <ImageBackground
-            key={index}
             source={{ uri: item.image }}
             resizeMode="cover"
             style={{
@@ -36,8 +32,8 @@ const ScreenTwo = ({ dataIn, dataOut, dataLoad }: Props) => {
             }}
             borderRadius={5}
           >
-            <View key={index} style={[styles.overlay, dataIn.overlayStyle]}>
-              <Text key={index} style={[styles.textstyle, dataIn.textStyle]}>
+            <View style={[styles.overlay, dataIn.overlayStyle]}>
+              <Text style={[styles.textstyle, dataIn.textStyle]}>
                 {item.text}
               </Text>
             </View>

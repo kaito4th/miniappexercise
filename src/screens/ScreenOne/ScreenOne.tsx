@@ -26,7 +26,6 @@ const ScreenOne = ({ dataIn, dataOut, dataLoad }: Props) => {
       >
         <TouchableOpacity onPress={() => dataOut(item)}>
           <ImageBackground
-            key={index}
             source={{ uri: item.image }}
             resizeMode="cover"
             style={{
@@ -36,8 +35,8 @@ const ScreenOne = ({ dataIn, dataOut, dataLoad }: Props) => {
             }}
             borderRadius={5}
           >
-            <View key={index} style={[styles.overlay, dataIn.overlayStyle]}>
-              <Text key={index} style={[styles.textStyle, dataIn.textStyle]}>
+            <View style={[styles.overlay, dataIn.overlayStyle]}>
+              <Text style={[styles.textStyle, dataIn.textStyle]}>
                 {item.text}
               </Text>
             </View>
