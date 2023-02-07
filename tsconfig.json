@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "miniappexercise": ["./src/index"]
+      "serino-miniapp-exercise": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

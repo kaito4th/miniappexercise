@@ -11,12 +11,39 @@ npm install miniappexercise
 ## Usage
 
 ```js
-import { multiply } from "miniappexercise";
+import { multiply } from 'miniappexercise';
 
 // ...
-
-const result = await multiply(3, 7);
 ```
+
+## MiniappExercise Miniapp
+
+Miniapp that compose of two orientation 'horizontal' , 'vertical' and uses the same props and types
+
+## MiniappExercise DataIn Props
+
+| Prop                     | Required | Type        | Description                                                           |
+| :----------------------- | :------- | :---------- | :-------------------------------------------------------------------- | -------------------------------- |
+| **`type`**               | Yes      | `string`    | Choose between 'horizontal' or 'vertical' orientation for this screen |
+| **`points`**             | No       | `string     | number`                                                               | use to set points on this screen |
+| **`text`**               | No       | `string`    | use to set title on this screen                                       |
+| **`listContainerStyle`** | No       | `ViewStyle` | View style for list component                                         |
+| **`overlayStyle`**       | No       | `ViewStyle` | View style for overlay                                                |
+| **`textStyle`**          | No       | `TextStyle` | Text style for item description                                       |
+
+## MiniappExercise DataLoad Props
+
+| Prop        | Type   |
+| :---------- | :----- |
+| **`id`**    | number |
+| **`image`** | string |
+| **`text`**  | string |
+
+## MiniappExercise DataOut Props
+
+| Prop              | Required | Type         | Description          |
+| :---------------- | :------- | :----------- | :------------------- |
+| **`TestDataOut`** | Yes      | `() => void` | Button onClick event |
 
 ## Contributing
 

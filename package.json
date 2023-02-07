@@ -1,6 +1,6 @@
 {
-  "name": "miniappexercise",
-  "version": "0.1.0",
+  "name": "serino-miniapp-exercise",
+  "version": "0.1.1",
   "description": "test",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -9,17 +9,7 @@
   "source": "src/index",
   "files": [
     "src",
-    "lib",
-    "android",
-    "ios",
-    "cpp",
-    "miniappexercise.podspec",
-    "!lib/typescript/example",
-    "!android/build",
-    "!ios/build",
-    "!**/__tests__",
-    "!**/__fixtures__",
-    "!**/__mocks__"
+    "lib"
   ],
   "scripts": {
     "test": "jest",
@@ -28,8 +18,14 @@
     "prepare": "bob build",
     "release": "release-it",
     "example": "yarn --cwd example",
+    "ios:default": "react-native run-ios --simulator=\"iPhone 14\"",
     "pods": "cd example && pod-install --quiet",
-    "bootstrap": "yarn example && yarn && yarn pods"
+    "bootstrap": "yarn example && yarn && yarn pods",
+    "prepub": "npx rimraf lib && npm run prepare",
+    "version:major": "npm version major --no-git-tag-version",
+    "version:minor": "npm version minor --no-git-tag-version",
+    "version:patch": "npm version patch --no-git-tag-version",
+    "publish:local": "npm publish --registry http://localhost:4873"
   },
   "keywords": [
     "react-native",
@@ -37,14 +33,18 @@
     "android"
   ],
   "repository": "https://",
-  "author": "Manuel Garcia <manuel.garcia@serino.com> (https://)",
+  "author": {
+    "name": "Manuel Garcia IV",
+    "email": "manuel.garcia@serino.com",
+    "url": "http://serino-gitlab.serino.com/Dev/mini-app/mobile_mini_app"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https:///issues"
   },
   "homepage": "https://#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "http://localhost:4873"
   },
   "devDependencies": {
     "@arkweid/lefthook": "^0.7.7",
@@ -63,7 +63,7 @@
     "pod-install": "^0.1.0",
     "prettier": "^2.0.5",
     "react": "17.0.2",
-    "react-native": "0.68.2",
+    "react-native": "0.66.4",
     "react-native-builder-bob": "^0.18.2",
     "release-it": "^15.0.0",
     "typescript": "^4.5.2"
